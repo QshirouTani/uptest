@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Depot2</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="<%= controller.controller_name %>">
+	<!DOCTYPE html>
+	<html>
+	<head>
+	  <meta charaset="utf-8">
+	  <title>Depot2</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body class="<%= controller.controller_name %>">
+		<div id="banner">
+			<%= image_tag("logo.png") %>
+			<%= @page_title || "Pragmatic Bookshelf" %>
+		</div>
+		<div id="columns">
+			<div id="side">
+				<ul>
+					<li><a href=""></a></li>
+					<li><a href=""></a></li>
+					<li><a href=""></a></li>
+					<li><a href=""></a></li>
+				</ul>
 
-<%= yield %>
+			</div>
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
 
-</body>
-</html>
+	</body>
+	</html>
