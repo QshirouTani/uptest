@@ -15,17 +15,19 @@
 		<div id="columns">
 			<div id="side">
 				<ul>
-					<li><a href=""></a></li>
-					<li><a href=""></a></li>
-					<li><a href=""></a></li>
-					<li><a href=""></a></li>
+					<li><a href="">ホーム</a></li>
+					<li><a href="">よくある質問</a></li>
+					<li><a href="">ニュース</a></li>
+					<li><a href="">お問い合わせ</a></li>
+					<li id="dayline"><%= time_now.to_s %></li>
+					<li id="dayline"><%= @time.to_s %></li>
 				</ul>
 
 			</div>
+		
+			<div id="main">
+				<%= yield %>
+			</div>
 		</div>
-		<div id="main">
-			<%= yield %>
-		</div>
-
 	</body>
 	</html>
