@@ -15,14 +15,15 @@
 		<div id="columns">
 			<div id="side">
 				<ul>
-					<li><a href="">ホーム</a></li>
+					<li><%= link_to("ホーム", store_path) %></li>
 					<li><a href="">よくある質問</a></li>
 					<li><a href="">ニュース</a></li>
 					<li><a href="">お問い合わせ</a></li>
 					<li id="dayline"><%= time_now.to_s %></li>
 					<li id="dayline"><%= @time.to_s %></li>
+					<%= puts "@cart = #{@cart}" %>
 					<% if @cart %>
-						<li><%= link_to("カート",carts_path(@cart || 0)) %></li>
+						<li><%= link_to("カート",(@cart)) %></li>
 					<% end %>
 				</ul>
 

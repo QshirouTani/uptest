@@ -6,9 +6,9 @@
 
 <h2>Pragmaticカート</h2>
 <ul>
-	<% @cart.line_items.each{ |item| %>
+	<!--<% @cart.line_items.each{ |item| %>
 		<li><%= item.quantity %> &times; <%= item.product.title %></li>
-	<% } %>
+	<% } %>-->
 </ul>
 
 
@@ -28,4 +28,5 @@
 	</tr>
 </table>
 
+<%= button_to '購入', new_order_path, method: :get, data:{confirm: 'ご決済してもよろしいですか?'} %>
 <%= button_to 'カートから削除', @cart, method: :delete, data:{confirm: '削除してもよろしいですか?'} %> 
