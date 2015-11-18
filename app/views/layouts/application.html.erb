@@ -21,6 +21,9 @@
 					<li><a href="">お問い合わせ</a></li>
 					<li id="dayline"><%= time_now.to_s %></li>
 					<li id="dayline"><%= @time.to_s %></li>
+					<% if @cart %>
+						<li><%= link_to("カート",carts_path(@cart || 0)) %></li>
+					<% end %>
 				</ul>
 
 			</div>
