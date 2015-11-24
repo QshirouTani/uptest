@@ -26,7 +26,14 @@
 						<li><%= link_to("カート",(@cart)) %></li>
 					<% end %>
 				</ul>
-
+				<% #if session[:user_id] %>
+					<ul>
+						<li><%= link_to '注文', orders_path %></li>
+						<li><%= link_to '商品', products_path %></li>
+						<li><%= link_to 'ユーザー', users_path %></li>
+					</ul>
+					<%= button_to 'ログアウト', logout_path, method: :delete %>
+				<% #end %>
 			</div>
 		
 			<div id="main">
