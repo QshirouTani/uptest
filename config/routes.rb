@@ -1,29 +1,36 @@
-Rails.application.routes.draw do
+Depot2::Application.routes.draw do
 
   get 'admin' => 'admin#index'
 
   controller :sessions do
     get 'login' => :new
     post 'login' => :created
-    delete 'login' => :destroy
+    delete 'logout' => :destroy
   end
 
-  get 'logout' => 'users#destroy'
+  #get 'logout' => 'users#destroy'
 
-  resources :users
-  resources :orders
-  resources :line_items
-  resources :carts
-  get 'store/index'
 
-  resources :products
+
+  scope '(:locale)' do
+    resources :users
+    resources :orders
+    resources :line_items
+    resources :carts
+    resources :products
+    root 'store#index', as: 'store'
+end
+
+  #get 'store/index'
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'store#index'
-  root 'store#index', as: 'store'
+  
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
